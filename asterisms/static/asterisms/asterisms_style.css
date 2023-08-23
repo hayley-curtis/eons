@@ -1,0 +1,215 @@
+
+/* global styles */
+    
+    body {
+        font-family:"Karla", sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+    }   
+
+    h4 {
+        text-align: center;
+    }
+
+    h7{
+        font-style: itali;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        color: #56BF86;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+/* nav bar styles */
+
+ .navbar-brand {
+            color: #25A582;
+            font-weight: bolder;
+        }
+  .navbar-list li {
+            color: #008B8B;
+            list-style: none;
+            text-decoration: none;
+            display: inline;
+        }
+
+    #nav {
+        padding: 5px;
+        
+    }
+    
+/* main */
+
+       h1 {
+            font-weight: bold;
+            font-style: italic;
+        }
+        #info {
+            text-align: center;
+        }
+        #buttonlink {
+            text-decoration: none;
+            color: #5BC0DE;
+        }
+
+        #buttonlink:hover {
+            color: white;
+        }
+
+        #mainbutton {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+       
+        #mainbutton:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .carousel-inner {
+            height: 500px;
+            width: 100%;
+
+        }
+        
+        #dresden {
+            object-fit: fill;
+           
+            
+        }
+
+/* index page styles */
+    figure.culturefigure {
+        width: 100%;
+        text-align: center;
+        display: block;
+        position: relative;
+        border-bottom: 3px;
+    }
+
+
+    #title {
+        background-color: white;
+        z-index: 1;
+        position:fixed;
+        width: 100%;
+        height:20%;
+
+
+    }
+    #about {
+        text-align: center;
+        position: fixed;
+        color: gray;
+        
+    }
+
+    .col-4 {
+        text-align: left;
+        margin: auto;
+    }
+
+    #regionbutton {
+        color:#008B8B;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+  
+    #regionbutton:hover {
+        text-decoration: underline;
+    }
+
+    #region_index {
+        padding-left: 4%;
+        position:fixed;
+       
+    }
+
+    #regionlist {
+        position: fixed;
+        margin-top: auto;
+        list-style: none;
+        color: gray;
+       
+    }
+
+    #continent {
+        font-style: bold;
+        font-weight: bold;
+        color:#008B8B;
+    }
+    #regionlink {
+        text-decoration: none;
+        color: gray;
+        list-style-type: none;
+    }
+    
+    #regionlink:hover {
+        color:  black;
+          
+    }
+
+    #figures {
+        justify-content: right;
+        margin:auto;
+        padding-left:13%;
+      
+    }
+
+   
+
+
+/* culture styles */
+    figure.asterismfigure {
+        width: 100%;
+        text-align: center;
+        display: block;
+        position: relative;
+        border-bottom: 3px;
+    }
+
+
+
+
+
+/* asterism styles */
+    #startable {
+        text-align: center;
+        margin: auto;
+        padding-left: 15%;
+    }     
+    .table {
+        table-layout: fixed;
+        
+    }
+
+    #relatedchunks {
+        display: block;
+        position: relative;
+        margin-top: 5%;
+    }
+
+    #relatedgrid {
+        margin: auto;
+        margin-left:24%;
+        text-align: center;
+        
+    }
+
+    #relatedasterismlink {
+        color: #008B8B;
+    }
+    #relatedasterismlink:hover {
+        color: #56BF86;
+    }

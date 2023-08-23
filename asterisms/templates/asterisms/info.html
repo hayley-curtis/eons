@@ -1,0 +1,16 @@
+<h1> About {{ c }} </h1>
+
+<p> {{ c }} is a constellation in the.....</p>
+
+
+    <table>
+        <tr>
+            <th>Star Proper Name</th>
+            <th> HD </th>
+        </tr>
+        {% for star in star_list %}
+        <tr>
+            <td> {{ star.star_name }} </td>
+            <td> HD {{star.star_hd}} </td>
+        </tr>
+        {% endfor %}

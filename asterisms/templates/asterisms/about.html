@@ -1,0 +1,73 @@
+{% extends "asterisms/base.html" %}
+{% load static %}
+{% block nav-home %}active{% endblock %}
+{% block title %}About Sky Cultures{% endblock %}
+{% block body %}
+
+<br>
+<br>
+<br>
+<h1> eons: elevating observers of the night sky <br> </h1>
+
+<h4> about eons </h4>
+
+
+
+<div class="row" id="info">
+    <div class="col-10">
+        <br>
+        <br>
+        <p> eons is a digital history project to contexualize different astronomical cultures from the perspective of those communities' cultural knowledge holders.</p>
+        <p>the project’s initial focus is to compile collections of open resources to contextualize asterisms outside of the officially recognized western-majority traditions.</p>
+    </div>
+</div>
+    
+<div class="row"> 
+    <div class="col-6" id="whyasterisms">
+        <h5> why asterisms? </h5>
+        <p> Asterisms provide an approachable starting place for people from different backgrounds to begin learning about the history and culture of Indiginous communities from the perspective of their cultural knowledge-holders and producers. </p>
+        <p>Colloquially defined as a grouping of stars, asterisms differ from “constellations” in that they may include small groupings of stars, and do not have official locations sanctioned by the International Astronomical Union. </p>
+        <p>For example, the constellation often recognized by the Greek name The Pleiades, or The Seven Sisters, has been part of many asterisms recognized by diffefirent Native American cultures: the Dancers, Holy Men, Caribou, Sharing Foxes, Brothers in a Boat, Coyote’s Daughters, Seeds, Puppies, and Crying Children just to name a few. Farming communities in Mali refer to The Pleiades as The Hen and The Chicks, and in southern Africa the Thonga people have no notion of asterisms at all with the single exception of this group of stars– they serve a very pragmatic purpose in that they track the tilling season in the Thonga lunar calendar.
+        </p>
+    </div>
+    <div class="col-6">
+        <figure id="pleiades">
+            <img  src="{% static "asterisms/images/Pleiades_large.jpeg" %}" alt="NASA pleiades" class="img-fluid">
+            <figcaption> an image of Pleiades </figcaption>
+        </figure>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class = "col-4">
+        <figure id="dunhuang">
+            <img src="{% static "asterisms/images/Dunhuang_star_map.jpeg" %}" alt="dunhuang star map" class="img-fluid">
+            <figcaption> constellation map from Dunhuang, Gansu, China ca. 700 CE </figcaption>
+        </figure>
+    </div>
+    <div class="col-8" id="boundaries">
+        <h5>history of the iau constellation boundaries</h5>
+        <p>The International Astronomical Union was founded in July 1919 at the Constitutive Assembly of the International Research Council in Brussels, Belgium as an international nongovernmental consortium of astronomers for the research and advancement of astronomy. The IAU's initial interest in constellations began in May 1922, during their second Annual Meeting in Rome. It was during this meeting, that the IAU decided to classify asterisms of historical significance with consideration given exclusively to asterisms with Latin names. This decision systematically selected asterisms named by people with either Greco-Roman cultural origins or astronomers who lived in 17th century Europe during the Early Modern period (the Scientific Revolution and the Enlightenment). Later, in 1930, Belgian astronomer Eugene Delporte created his classification of constellation boundaries in Delimitation Scientifique des Constellations using boundary specifications built upon the 1875 epoch constellation boundaries of American astronomer Benjamin Gould.
+
+            You can see the full list of IAU constellations with additional information about their origins here.
+            
+            Legacies of imperialism, colonialism, and racism are reflected in the decisions that led this international body to completely exclude the majority of the world's perspectives of sky. As a result, "Western" sky cultures have become hegemonic and elevated at the expense of all other astronomical traditions. 
+            
+            </p>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-10">
+        <figure>
+            <img src="{% static "asterisms/images/boundarymap.jpeg" %}" alt="boundary map" class="img-fluid">
+            <figcaption> example of iau star boundary map</figcaption>
+        </figure>
+    </div>
+</div>
+
+{% endblock %}

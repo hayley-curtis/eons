@@ -1,0 +1,229 @@
+{% extends "asterisms/base.html" %}
+{% load static %}
+{% block nav-home %}active{% endblock %}
+{% load asterisms_extra_filters %}
+{% load asterisms_remove_culture_designation  %}
+
+
+{% block title %} Asterisms {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12" id="title">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1> "{{a|rem_desig}}" <br></h1>
+            <div class="row" id="about">
+                <div class="column-10" id="about">
+                    <p id="designator"><a href="/asterisms/"> all cultures</a> / <a href="/asterisms/{{ region }}/">{{ region|name_format }} </a> / <a href="/asterisms/{{ region }}/{{  culture }}">{{ culture }} </a> / {{ a|rem_desig }} </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">  
+        <div class="col-2" id="region_index">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+         
+            <div id="collapsegroup">
+                <div>
+                    <button id="regionbutton" class="btn btn-link" type="button"><a href="/asterisms/iau_designated_asterisms/western" id="regionbutton"> Offical IAU Asterisms </a> </button>
+                </div>
+                <div>
+                    <button id="regionbutton" class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#Africa" aria-expanded="false" aria-controls="collapseExample">Africa + </button>
+                </div>
+                <div class="collapse" id="Africa">
+                    <ul>
+                        <li> <a href="/asterisms/north_africa" id="regionlink">North Africa </a> </li>
+                    </ul>
+                </div> 
+                <div>
+                    <button id="regionbutton" class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#Americas" aria-expanded="false" aria-controls="collapseExample">Americas + </button>
+                </div>
+                <div class="collapse" id="Americas">
+                    <ul>
+                        <li> <a href="/asterisms/central_america" id="regionlink">Central America </a> </li>
+                        <li> <a href="/asterisms/north_america" id="regionlink">North America </a> </li>
+                        <li> <a href="/asterisms/south_america" id="regionlink">South America </a> </li>
+                    </ul>
+                </div>
+                <div>
+                    <button id="regionbutton" class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#Asia" aria-expanded="false" aria-controls="collapseExample">Asia + </button>
+                </div>
+                <div class="collapse" id="Asia">
+                    <ul>
+                        <li> <a href="/asterisms/eastern_asia" id="regionlink">Eastern Asia </a> </li>
+                        <li> <a href="/asterisms/northern_asia" id="regionlink">Northern Asia </a> </li>
+                        <li> <a href="/asterisms/southern_asia" id="regionlink">Southern Asia </a> </li>
+                        <li> <a href="/asterisms/western_asia" id="regionlink">Western Asia </a> </li>
+                    </ul>
+                </div>
+                <div>
+                    <button id="regionbutton" class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#Europe" aria-expanded="false" aria-controls="collapseExample">Europe + </button>
+                </div>
+                <div class="collapse" id="Europe">
+                    <ul>
+                        <li> <a href="/asterisms/eastern_europe" id="regionlink">Eastern Europe </a> </li>
+                        <li> <a href="/asterisms/northern_europe" id="regionlink">Northern Europe </a> </li>
+                        <li> <a href="/asterisms/southern_europe" id="regionlink">Southern Europe </a> </li>
+                    </ul>
+                </div>
+                <div>
+                    <button id="regionbutton" class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#Oceania" aria-expanded="false" aria-controls="collapseExample">Oceania + </button>
+                </div>
+                <div class="collapse" id="Oceania">
+                    <ul>
+                        <li> <a href="/asterisms/australasia" id="regionlink">Australasia </a> </li>
+                        <li> <a href="/asterisms/polynesia" id="regionlink">Polynesia </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+      
+        <div class="col-8" id="startable">
+
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <h4> asterism star data  </h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> star hip </th>
+                        <th> star ra </th>
+                        <th> star dec </th>
+                        <th>IAU region</th>
+                        <!-- <th> related asterisms</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if stars_list%}
+                    {% for star in stars_list %}
+                    
+                        <tr>
+                            <td> {{ star.star_hip }}</td>
+                            <td> {{ star.star_ra }}</td>
+                            <td> {{ star.star_dec }}</td>
+                            <td></td>
+                            <!-- 
+                            <td>
+                            
+                            {% if star.is_related > 1 %}
+                            <div id="collapsegroup">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#content" aria-expanded="false" aria-controls="collapseExample">related asterisms</button> 
+                            <div class="collapse" id="content">
+                                <div class="card card-body" id="related_asterisms" data-bs-parent="#collapsegroup">
+                                        {% for asterism in star.related_asterisms %}
+                                            {% if asterism != a %}
+                                            <p><a href="../../../{{ asterism.geographic_region }} /{{ asterism.culture}}/{{ asterism }}/"> {{ asterism|rem_desig }} | {{ asterism.culture|title }}</a></p>
+                                            {% endif %}
+                                        {% endfor %}     
+                                </div>  
+                            </td>
+                            </div>
+                            {% else %} 
+                                <p>no related asterisms</p>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    -->
+                        </div>
+                        {% endfor %}
+                        {% endif %} 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+   
+    
+<!-- I would love to add a carousel once I have images
+but it might take a while to figure out the multi image carousel slides
+so this will have to do for now -->
+
+    <div class="row">
+        
+        <div class="col-8 " id="relatedgrid">
+            <h4>related asterisms</h4>
+            <h7>other cultural asterisms that use these stars</h7>
+            <div class="row">
+            {% if relatedasterismlist %}
+                {% for asterism in relatedasterismlist%} 
+                    {% if asterism != a %}
+                    <div class="col-3" id="relatedchunks"> 
+                        <!-- in the future, I can add some images-->
+                        <p><a id="relatedasterismlink" href="../../../{{ asterism.geographic_region }} /{{ asterism.culture}}/{{ asterism }}/"> {{ asterism|rem_desig }} | {{ asterism.culture|title }}</a></p>
+                </div>
+                {% endif %}
+                {% endfor %}
+                
+            {% endif %}
+            
+            <br>
+
+           
+        </div>
+        <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+    
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+
+    </body>
+    {% endblock %}
+
+
+
+
+
